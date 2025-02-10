@@ -1,5 +1,5 @@
 {
-  "name": "mongo-query",
+  "name": "mongo-query-utils",
   "version": "1.0.0",
   "main": "index.js",
   "repository": {
