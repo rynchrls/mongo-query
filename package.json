@@ -1,0 +1,21 @@
+{
+  "name": "mongo-query",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "keywords": [],
+  "author": "Ryan Charles Alcaraz",
+  "license": "ISC",
+  "description": "A simple mongo query builder for node.js",
+  "dependencies": {
+    "mongoose": "^8.9.7"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
