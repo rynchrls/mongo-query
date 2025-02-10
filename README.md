@@ -1,4 +1,4 @@
-## 🔒 mongo-query
+## 🔒 mongo-query-utils
 
 A simple **mongo query** builder for node.js for Node/Express.js.
 
@@ -15,7 +15,7 @@ A simple **mongo query** builder for node.js for Node/Express.js.
 ## 📦 Installation
 
 ```sh
-npm install mongo-query
+npm install mongo-query-utils
 ```
 
 ---
@@ -38,7 +38,7 @@ const {
   removeOne,
   removeMany,
   summarize,
-} = require("mongo-query");
+} = require("mongo-query-utils");
 ```
 
 ## Create a New Document
