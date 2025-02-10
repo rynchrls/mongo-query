@@ -183,6 +183,6 @@ console.log(latestUsers);
 
 MIT License. See `LICENSE` for details.
 
-📌 **Author**: Ryan Charles Alcaraz ([github](https://github.com/rynchrls/authentication-facilitator))
+📌 **Author**: Ryan Charles Alcaraz ([github](https://github.com/rynchrls/mongo-query))
 
 ---
