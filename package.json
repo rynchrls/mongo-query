@@ -12,7 +12,10 @@
   "jest": {
     "testEnvironment": "node"
   },
-  "keywords": [],
+  "keywords": [
+    "mongodb",
+    "mongoose"
+  ],
   "author": "Ryan Charles Alcaraz",
   "license": "ISC",
   "description": "A simple mongo query builder for node.js",
