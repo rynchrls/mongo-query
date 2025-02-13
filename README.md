@@ -49,7 +49,7 @@ const document = {
   first_name: "Sample",
   last_name: "Test",
 };
-const newDoc = await generate(document, Table, {}); // The third param is an option on how the data is served.
+const newDoc = await generate(document, Table);
 console.log(Table);
 ```
 

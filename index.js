@@ -30,9 +30,9 @@ const fetchOne = async (where, model, options = {}) => {
   }
 };
 
-const generate = async (what, model, options = {}) => {
+const generate = async (what, model) => {
   try {
-    return await model?.create(what, { ...options });
+    return await model?.create({ ...what });
   } catch (error) {
     throw new Error(`Error updating document: ${error.message}`);
   }
