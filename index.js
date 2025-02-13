@@ -1,9 +1,8 @@
-
 const fetchAll = async (where, model, options = {}) => {
   try {
     const { select, populate, sort, limit, skip } = options;
 
-    let query = model.find(where);
+    let query = model?.find(where);
 
     if (select) query = query.select(select); // Select specific fields
     if (populate) query = query.populate(populate); // Populate referenced fields
@@ -21,7 +20,7 @@ const fetchOne = async (where, model, options = {}) => {
   try {
     const { select, populate } = options;
 
-    let query = model.findOne(where);
+    let query = model?.findOne(where);
     if (select) query = query.select(select);
     if (populate) query = query.populate(populate);
 
@@ -33,7 +32,7 @@ const fetchOne = async (where, model, options = {}) => {
 
 const generate = async (what, model, options = {}) => {
   try {
-    return await model.create(what, { ...options })
+    return await model?.create(what, { ...options });
   } catch (error) {
     throw new Error(`Error updating document: ${error.message}`);
   }
@@ -43,7 +42,7 @@ const fetchById = async (id, model, options = {}) => {
   try {
     const { select, populate } = options;
 
-    let query = model.findById(id);
+    let query = model?.findById(id);
     if (select) query = query.select(select);
     if (populate) query = query.populate(populate);
 
@@ -61,7 +60,7 @@ const patchOneAndUpdate = async (
 ) => {
   try {
     const result = await model
-      .findOneAndUpdate(where, update, { ...options })
+      ?.findOneAndUpdate(where, update, { ...options })
       .exec();
     return result;
   } catch (error) {
@@ -72,7 +71,7 @@ const patchOneAndUpdate = async (
 const patchByIdAndUpdate = async (id, update = {}, model, options = {}) => {
   try {
     const result = await model
-      .findByIdAndUpdate(id, update, { ...options })
+      ?.findByIdAndUpdate(id, update, { ...options })
       .exec();
     return result;
   } catch (error) {
@@ -82,7 +81,7 @@ const patchByIdAndUpdate = async (id, update = {}, model, options = {}) => {
 
 const patchOne = async (where = {}, update = {}, model, options = {}) => {
   try {
-    const result = await model.updateOne(where, update, options).exec();
+    const result = await model?.updateOne(where, update, options).exec();
     return result;
   } catch (error) {
     throw new Error(`Error updating document: ${error.message}`);
@@ -91,7 +90,7 @@ const patchOne = async (where = {}, update = {}, model, options = {}) => {
 
 const patchMany = async (where = {}, update = {}, model, options = {}) => {
   try {
-    const result = await model.updateMany(where, update, options).exec();
+    const result = await model?.updateMany(where, update, options).exec();
     return result;
   } catch (error) {
     throw new Error(`Error updating documents: ${error.message}`);
@@ -105,7 +104,7 @@ const replaceOne = async (
   options = {}
 ) => {
   try {
-    const result = await model.replaceOne(where, replacement, options).exec();
+    const result = await model?.replaceOne(where, replacement, options).exec();
     return result;
   } catch (error) {
     throw new Error(`Error replacing document: ${error.message}`);
@@ -114,7 +113,7 @@ const replaceOne = async (
 
 const removeOne = async (where = {}, model, options = {}) => {
   try {
-    const result = await model.deleteOne(where, options).exec();
+    const result = await model?.deleteOne(where, options).exec();
     return result;
   } catch (error) {
     throw new Error(`Error deleting document: ${error.message}`);
@@ -123,7 +122,7 @@ const removeOne = async (where = {}, model, options = {}) => {
 
 const removeMany = async (where = {}, model, options = {}) => {
   try {
-    const result = await model.deleteMany(where, options).exec();
+    const result = await model?.deleteMany(where, options).exec();
     return result;
   } catch (error) {
     throw new Error(`Error deleting document: ${error.message}`);
@@ -132,7 +131,7 @@ const removeMany = async (where = {}, model, options = {}) => {
 
 const summarize = async (model, fields = []) => {
   try {
-    const summary = await model.aggregate(fields).exec();
+    const summary = await model?.aggregate(fields).exec();
     return summary;
   } catch (error) {
     console.error("Error summarizing data:", error);
